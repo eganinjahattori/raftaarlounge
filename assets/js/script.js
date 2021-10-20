@@ -1,4 +1,5 @@
 async function handleContactSubmit() {
+    console.log("Handle Contact Submit Form");
     const name = document.getElementById("name2").value;
     const email = document.getElementById("email2").value;
     const subject = document.getElementById("subject2").value;
