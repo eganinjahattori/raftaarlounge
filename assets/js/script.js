@@ -11,12 +11,15 @@ async function handleContactSubmit() {
     };
     if (name != undefined && email != undefined && subject != undefined && message != undefined) {
         console.log(name, email, subject, message);
-        const response = await fetch('https://raftaarlounge.herokuapp.com/contact',
+        const response = await fetch('http://localhost:4040/contact',
             {
                 method: 'POST',
                 body: JSON.stringify(obj),
-                headers: {'X-Requested-With': 'XMLHttpRequest'}
-            },);
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
         console.log(response);
     }
 }
