@@ -50,10 +50,10 @@
   });
 
   function php_email_form_submit(thisForm, action, formData) {
-    fetch('https://raftaarlounge.herokuapp.com/contact', {
+    fetch('', {
       method: 'POST',
       body: formData,
-      headers: {'X-Requested-With': 'XMLHttpRequest'}
+      // headers: {'X-Requested-With': 'XMLHttpRequest'}
     })
     .then(response => {
       if( response.ok ) {
