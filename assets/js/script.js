@@ -1,3 +1,5 @@
+fetch('https://raftaarlounge.herokuapp.com/');
+
 async function handleContactSubmit() {
     console.log("Handle Contact Submit Form");
     const name = document.getElementById("name2").value;
@@ -24,7 +26,8 @@ async function handleContactSubmit() {
                 }
             });
         console.log(response);
-        document.getElementById("sent-message2").style.display = "block";
+        if(response.status == 200)
+            document.getElementById("sent-message2").style.display = "block";
     }
 }
 
