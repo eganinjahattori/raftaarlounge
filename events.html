@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+  <script>
+    if (window.localStorage.getItem("auth") == null || window.localStorage.getItem("auth") == '') {
+      window.location.replace('/index.html');
+    }
+  </script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -66,47 +71,50 @@
       <div class="container" style="border:none;">
 
         <div class="section-title">
-          <h2>Login</h2>
-          <p>Enter your username and password below</p>
+          <h2>Events</h2>
+          <p>Add a new event below</p>
         </div>
 
         <form role="form" class="php-email-form" style="border:none;">
           <div class="row">
-              <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
             <div class="col-lg-4 col-md-6 form-group">
-              <input type="text" name="username" class="form-control" id="username1" placeholder="Your User Name" data-rule="minlen:4">
+              <input type="text" name="name" class="form-control" id="name1" placeholder="Enter Event Name"
+                data-rule="minlen:4">
               <div class="validate"></div>
             </div>
             <div class="col-lg-4"></div>
             <div class="col-lg-4"></div>
             <div class="col-lg-4 col-md-6 form-group">
-              <input type="password" name="password" class="form-control" id="password1" placeholder="Your Password" data-rule="minlen:4"
-                data-msg="Please enter at least 4 chars">
+              <input type="text" name="description" class="form-control" id="description1"
+                placeholder="Enter Event Description" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
               <div class="validate"></div>
             </div>
             <div class="col-lg-4"></div>
-          <div class="mb-3">
-            <div class="sent-message" id="sent-message1">Your booking request was sent. We will call back or send an Email to confirm
-              your
-              reservation. Thank you!</div>
-          </div>
-          <div class="text-center"><input onclick="handleLogin()" class="btn btn-warning" style="color:white;" value="Login"/></div>
+            <div class="mb-3">
+              <div class="sent-message" id="sent-message1">Your booking request was sent. We will call back or send an
+                Email to confirm
+                your
+                reservation. Thank you!</div>
+            </div>
+            <div class="text-center"><input onclick="" class="btn btn-warning" style="color:white;" value="Add Event" />
+            </div>
         </form>
 
       </div>
     </section><!-- End Book A Table Section -->
 
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/script.js"></script>
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/script.js"></script>
 
 
 </body>
