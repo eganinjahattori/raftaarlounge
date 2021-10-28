@@ -82,3 +82,33 @@ async function handleBookSubmit() {
         window.alert("Error: Please fill all the details!");
     }
 }
+
+async function handleLogin() {
+    const username = document.getElementById("username1").value;
+    const password = document.getElementById("password1").value;
+    if (username == undefined || username == '' || password == undefined || password == '') {
+        window.alert("Username/Password cannot be empty.");
+    }
+    else {
+        const body = { username: username, password: password };
+        // const response = await fetch('https://raftaarlounge.herokuapp.com/login',
+        const response = await fetch('http://localhost:4040/login',
+            {
+                method: 'POST',
+                body: JSON.stringify(body),
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+        console.log(response);
+        if (response.status == 200)
+        {
+            window.localStorage.setItem("auth","success");
+            window.location.replace('/events.html');
+        }
+        else
+            window.alert("Invalid Credentials. Please try again.")
+    }
+    console.log(username, password);
+}
