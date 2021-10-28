@@ -14,7 +14,7 @@ async function handleContactSubmit() {
     };
     if (name != undefined && email != undefined && subject != undefined && message != undefined
         && name != '' && email != '' && subject != '' && message != ''
-        ) {
+    ) {
         console.log(name, email, subject, message);
         const response = await fetch('https://raftaarlounge.herokuapp.com/contact',
             {
@@ -26,7 +26,7 @@ async function handleContactSubmit() {
                 }
             });
         console.log(response);
-        if(response.status == 200)
+        if (response.status == 200)
             document.getElementById("sent-message2").style.display = "block";
     }
 }
@@ -49,10 +49,21 @@ async function handleBookSubmit() {
         people: people,
         message: message
     };
+
+    // console.log(people.split('/'))
+
+    if (people != undefined && people != '') {
+        if (people.split('/').length != 2 && people.split('/')[0].length == 0 && people.split('/')[1].length == 0) {
+            window.alert("Please enter the male/female ratio.");
+            return;
+        }
+    }
+
     if (name != undefined && email != undefined && phone != undefined && message != undefined
         && date != undefined && time != undefined && people != undefined
         && name != '' && email != '' && phone != '' && message != ''
-        && date != '' && time != '' && people != ''
+        && date != '' && time != '' && people != '' && people.split('/').length == 2 &&
+        people.split('/')[0].length > 0 && people.split('/')[1].length > 0
     ) {
         console.log(name, email, phone, message);
         const response = await fetch('https://raftaarlounge.herokuapp.com/bookTable',
@@ -64,7 +75,10 @@ async function handleBookSubmit() {
                     'Content-Type': 'application/json',
                 }
             });
-            document.getElementById("sent-message1").style.display = "block";
+        document.getElementById("sent-message1").style.display = "block";
         console.log(response);
+    }
+    else {
+        window.alert("Error: Please fill all the details!");
     }
 }

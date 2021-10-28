@@ -630,7 +630,7 @@
           <p>Fill out the form below and we will get in touch with you right away.</p>
         </div>
 
-        <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form">
+        <form role="form" class="php-email-form">
           <div class="row">
             <div class="col-lg-4 col-md-6 form-group">
               <input type="text" name="name" class="form-control" id="name1" placeholder="Your Name" data-rule="minlen:4"
@@ -658,8 +658,10 @@
               <div class="validate"></div>
             </div>
             <div class="col-lg-4 col-md-6 form-group mt-3">
-              <input type="number" class="form-control" name="people" id="people1" placeholder="Number of male/Number of female"
-                data-rule="minlen:1" data-msg="Please enter at least 1 chars">
+              <!-- <input type="text" class="form-control" name="time" id="time1" placeholder="Time" data-rule="minlen:4"
+              data-msg="Please enter at least 4 chars"> -->
+              <input type="text" class="form-control" name="people" id="people1" placeholder="Number of male/Number of female"
+                data-msg="Please enter at least 1 chars">
               <div class="validate"></div>
             </div>
           </div>
@@ -674,7 +676,7 @@
               your
               reservation. Thank you!</div>
           </div>
-          <div class="text-center"><button type="submit" onclick="handleBookSubmit()">Send Message</button></div>
+          <div class="text-center"><input onclick="handleBookSubmit()" class="btn btn-warning" style="color:white;" value="Send Message"/></div>
         </form>
 
       </div>
