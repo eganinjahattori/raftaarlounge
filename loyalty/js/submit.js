@@ -9,7 +9,7 @@ async function handleSubmit () {
         }
         const response = await fetch(
           // 'http://localhost:7070/loyalty/new',
-          'http://18.217.196.171:7070/loyalty/new',
+          'http://3.143.169.167:7070/loyalty/new',
           {
             method: 'POST',
             body: JSON.stringify(body),
